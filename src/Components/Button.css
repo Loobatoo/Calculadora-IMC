@@ -1,0 +1,19 @@
+button{
+    
+    padding: .5rem 2rem;
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+#Limpar{
+    border: none;
+    background-color: #d76b5c;
+
+    color: white;
+}
+
+button:hover{
+    transform: translate(2px, 2px);
+}
