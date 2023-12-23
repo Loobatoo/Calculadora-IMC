@@ -5,6 +5,7 @@ import './Button.css'
 const Button = ({id, Text, action}) => {
 
   const HandleAction = (e) => {
+    e.preventDefault()
     action(e);
   }
 

@@ -5,11 +5,13 @@ import { useState } from 'react'
 
 const CalcularIMC = () => {
 
-    const [Heigh, SetHeight] = useState("");
+    const [Height, SetHeight] = useState("");
     const [Weight, SetWeight] = useState("");
+    const [Result, SetResult] = useState("");
+
     
     const Valid = (text) => {
-        return text.replace(/[^0-9]/g, "");
+        return text.replace(/[^0-9.]/g, "");
     }
 
     const HandleHeight = (e) => {
@@ -33,6 +35,11 @@ const CalcularIMC = () => {
         console.log("Limpou!")
     }
 
+    const Calculo = (e) => {
+        const Resultado = Weight / (Height * Height) ;
+        SetResult(Resultado)
+    }
+
   return (
     <form className="Container">
 
@@ -44,7 +51,7 @@ const CalcularIMC = () => {
         type="text"
         placeholder='1.80 M'
         onChange={HandleHeight}
-        value={Heigh} />
+        value={Height} />
     </div>
 
     <div className="Children">
@@ -57,7 +64,7 @@ const CalcularIMC = () => {
     </div>
 
     <div className='Buttons'>
-        <Button id="Calcular" Text="Calcular" action=""/>
+        <Button id="Calcular" Text="Calcular" action={Calculo}/>
         <Button id="Limpar" Text="Limpar" action={Clear}/>
     </div>
 
