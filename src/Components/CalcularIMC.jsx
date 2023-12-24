@@ -3,7 +3,7 @@ import React from 'react'
 import Button from './Button';
 import { useState } from 'react'
 
-const CalcularIMC = () => {
+const CalcularIMC = ({ImcResult}) => {
 
     const [Height, SetHeight] = useState("");
     const [Weight, SetWeight] = useState("");
@@ -35,11 +35,6 @@ const CalcularIMC = () => {
         console.log("Limpou!")
     }
 
-    const Calculo = (e) => {
-        const Resultado = Weight / (Height * Height) ;
-        SetResult(Resultado)
-    }
-
   return (
     <form className="Container">
 
@@ -64,7 +59,7 @@ const CalcularIMC = () => {
     </div>
 
     <div className='Buttons'>
-        <Button id="Calcular" Text="Calcular" action={Calculo}/>
+        <Button id="Calcular" Text="Calcular" action={(e) => {ImcResult(e, Height, Weight)}}/>
         <Button id="Limpar" Text="Limpar" action={Clear}/>
     </div>
 
