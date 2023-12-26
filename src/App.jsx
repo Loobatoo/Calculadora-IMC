@@ -16,7 +16,7 @@ function App() {
   const ImcResult = (e , Height, Weight) => {
 
     const Resultado = Weight / (Height * Height);
-    SetImc(Resultado);
+    SetImc(Resultado.toFixed(0));
 
   }
 
