@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+
 import './ShowIMC.css';
 
-const ShowIMC = ({ Imc, Info, data }) => {
+import Button from './Button';
+
+const ShowIMC = ({ Imc, Info, data, GetBack }) => {
   
   const [actualSituation, setActualSituation] = useState("");
 
@@ -46,7 +49,10 @@ const ShowIMC = ({ Imc, Info, data }) => {
           <p> {item.obesity}</p>
         </div>
       ))}
-      <p> Sua situação é <span>{actualSituation}</span> ! </p>
+      <p id='Situation'> Sua situação é <span>{actualSituation}</span> ! </p>
+
+      <Button id="Voltar" Text="Voltar" action={GetBack}/>
+
     </div>
   );
 };

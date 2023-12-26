@@ -49,3 +49,16 @@
 p:nth-child(0){
     margin-bottom: 1rem;
 }
+
+#Situation{
+    margin-top: 1rem;
+}
+
+#Voltar{
+    margin-top: 1rem;
+
+    border: none;
+    background-color: #d76b5c;
+
+    color: white;
+}

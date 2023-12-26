@@ -15,9 +15,21 @@ function App() {
 
   const ImcResult = (e , Height, Weight) => {
 
-    const Resultado = Weight / (Height * Height);
-    SetImc(Resultado.toFixed(0));
+    if (Height === ""){
+      alert("Preencha os campos corretamente!")
+    } else if ( Weight === ""){
+      alert("Preencha os campos corretamente!")
+    } else {
+      const Resultado = Weight / (Height * Height);
+      SetImc(Resultado.toFixed(0));  
+    }
+  }
 
+  const GetBack = (e) => {
+    e.preventDefault()
+
+    SetImc("");
+    SetInfo("");
   }
 
   return (
@@ -25,7 +37,7 @@ function App() {
         {!Imc ?(
           <CalcularIMC ImcResult={ImcResult}/>
         ) : (
-          <ShowIMC Imc={Imc} Info={Info} data={data}/>
+          <ShowIMC Imc={Imc} Info={Info} data={data} GetBack={GetBack}/>
         )}
     </div>
   )

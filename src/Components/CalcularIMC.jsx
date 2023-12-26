@@ -5,8 +5,8 @@ import { useState } from 'react'
 
 const CalcularIMC = ({ImcResult}) => {
 
-    const [Height, SetHeight] = useState("1.80");
-    const [Weight, SetWeight] = useState("70");
+    const [Height, SetHeight] = useState("");
+    const [Weight, SetWeight] = useState("");
     const [Result, SetResult] = useState("");
 
     
