@@ -5,8 +5,8 @@ import { useState } from 'react'
 
 const CalcularIMC = ({ImcResult}) => {
 
-    const [Height, SetHeight] = useState("");
-    const [Weight, SetWeight] = useState("");
+    const [Height, SetHeight] = useState("1.80");
+    const [Weight, SetWeight] = useState("70");
     const [Result, SetResult] = useState("");
 
     
@@ -36,6 +36,7 @@ const CalcularIMC = ({ImcResult}) => {
     }
 
   return (
+
     <form className="Container">
 
     <h1> Calculadora de IMC </h1>
@@ -65,6 +66,7 @@ const CalcularIMC = ({ImcResult}) => {
 
 
 </form>
+
   )
 }
 

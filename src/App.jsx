@@ -1,5 +1,7 @@
 import './App.css'
 
+import { data } from './data/data'
+
 import ShowIMC from './Components/ShowIMC'
 import CalcularIMC from './Components/CalcularIMC'
 
@@ -8,15 +10,14 @@ import { useState } from 'react'
 function App() {
 
   const [Imc, SetImc] = useState("");
+  const [Info, SetInfo] = useState("");
+
 
   const ImcResult = (e , Height, Weight) => {
-    console.log(Height);
-    console.log(Weight);
 
     const Resultado = Weight / (Height * Height);
     SetImc(Resultado);
 
-    console.log(Imc)
   }
 
   return (
@@ -24,7 +25,7 @@ function App() {
         {!Imc ?(
           <CalcularIMC ImcResult={ImcResult}/>
         ) : (
-          <ShowIMC />
+          <ShowIMC Imc={Imc} Info={Info} data={data}/>
         )}
     </div>
   )
